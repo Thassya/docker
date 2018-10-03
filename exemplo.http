@@ -1,0 +1,9 @@
+
+POST http://localhost:8000/api/codigo/ HTTP/1.1
+content-type: application/json
+
+{
+    "codigo": "#includ <stdio.h>\nint main() {\n\t for(int i = 0; i<10; i++){\n\t\tprintf(\"Hello, Mundo!\");\n\t\t}\n\treturn 0;\n}"
+}
+
+###
