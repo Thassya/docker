@@ -1,9 +1,9 @@
 
 INPUTFILE=input_compiled$1
-	timeout 1 ./home/compiler/input/$INPUTFILE < ./home/compiler/input/stdin.txt > /home/compiler/output/output.txt;
+	timeout 1 ./home/compiler/input/$INPUTFILE < ./home/compiler/input/stdin.txt > /home/compiler/output/retorno.txt 2> /home/compiler/output/validacao.txt;
 	if [ $? = 124 ] ; then
-	    echo "TimeOut" > /home/compiler/output/status.txt
-	    echo "TimeOut" > /home/compiler/output/output.txt
+	    
+	    echo "\",\"timeout\":\"Sim" > /home/compiler/output/retorno.txt
 	
 	fi
 

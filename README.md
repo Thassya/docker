@@ -18,7 +18,7 @@ Simples instância de Docker para compilar arquivos C.
     - exit
     - docker commit [id_container] gcc
     - docker run -i -t --name gcc_compiler  gcc 
-    - chmod chmod u+x script.sh
+    - chmod u+x script.sh
     
 * é necessário instalar o pacote Cors do node. (npm install cors)
 * node index.js para inicialiar o projeto.
