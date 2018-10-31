@@ -20,5 +20,10 @@ Simples instância de Docker para compilar arquivos C.
     - docker run -i -t --name gcc_compiler  gcc 
     - chmod u+x script.sh
     
+    <!-- ver todas os containers: docker ps -a -->
+    <!-- Deletar todas os containers do docker:  docker rm $(docker ps -aq) -->
+    <!-- Listar imagens docker images -->
+    <!-- deletar images docker rmi ID_ou_nome_da_imagem -->
+
 * é necessário instalar o pacote Cors do node. (npm install cors)
 * node index.js para inicialiar o projeto.
