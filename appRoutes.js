@@ -36,12 +36,14 @@ router.post('/tentativa-resposta', (req, res, next)=> {
         }
         else if(jsondata.output.compilado=="sim"&&jsondata.output.validacao==" "&&jsondata.output.retorno==""){
             //deu tudo certo
-            output.console = {}, output.result = null;
+            output.result = "null";
         }
         else {
-            output.console = criandoConsole(casosTeste, jsondata.output.retorno);
+            // output.console = criandoConsole(casosTeste, jsondata.output.retorno);
             output.result = jsondata.output.validacao;
         }
+        output.console = criandoConsole(casosTeste, jsondata.output.retorno);
+
         fs.unlink(`/tmp/docker/stdout${d}.json`, function(){});
         fs.unlink(`/tmp/docker/input${d}.c`, function(){});
         return res.status(200).json({"output": output});
