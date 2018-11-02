@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Thassya/docker#readme",
   "dependencies": {
-    "node-exec-promise": "^1.0.2"
+    "node-exec-promise": "^1.0.2",
+    "express": "*",
+    "body-parser":"*",
+    "cors": "*"    
   }
 }
