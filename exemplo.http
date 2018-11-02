@@ -5,9 +5,17 @@ content-type: application/json
 {
     "idUsuario": "5bbe3ec0b0792f4073dcb9fd","idExercicio":"5bc4b893f952a0139c179d51","dataInicial":"2018-10-18T12:42:06.580Z",
     "linguagem": "C", 
-    "resposta": "int A = 2, B = 2;\n\n assert(A==3); // A deve ter o valor 3;\n assert(B==2); // B deve ter o valor 2; \n assert(strcmp(\"Fulano\", \"Fulano\")==0); //Fulano deve se chamar fulano;"
+    "resposta": "int A = 2, B = 2;\n\n assert(A==3); // A deve ter o valor 3;\n assert(B==2); // B deve ter o valor 2;"
 }
 
+POST http://localhost:3001/server/tentativa-resposta/ HTTP/1.1
+content-type: application/json
+
+{
+    "idUsuario": "5bbe3ec0b0792f4073dcb9fd","idExercicio":"5bc4b893f952a0139c179d51","dataInicial":"2018-10-18T12:42:06.580Z",
+    "linguagem": "C", 
+    "resposta": "int A = 2, B = 2;\n\n assert(A==3); // A deve ter o valor 3;\n assert(B==2); // B deve ter o valor 2; \n assert(strcmp(\"Fulano\", \"Fulano\")==0); //Fulano deve se chamar fulano;"
+}
 
 ###
 POST http://localhost:3001/server/tentativa-resposta HTTP/1.1
