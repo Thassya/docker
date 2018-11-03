@@ -110,11 +110,11 @@ router.post('/tentativa-resposta', (req, res, next) => {
         codigo = codigo.substring(0, lastOf) + "\n" + elemento + "\n" + codigo.substring(lastOf, codigo.length);
     });
 
-    fs.writeFile(`/tmp/docker/input${d}.c`, codigo, 'utf8', (error) => { if (error) throw error; });
+    fs.writeFile(`/tmp/input${d}.c`, codigo, 'utf8', (error) => { if (error) throw error; });
 
     exec(`./script.sh ${d}`, (error, stdout, stderr) => {
         if (error) throw error;
-        let rawdata = fs.readFileSync(`/tmp/docker/stdout${d}.json`);
+        let rawdata = fs.readFileSync(`/tmp/stdout${d}.json`);
         let jsondata = JSON.parse(rawdata);
 
         if (jsondata.output.compilado == "nao") {
@@ -130,8 +130,8 @@ router.post('/tentativa-resposta', (req, res, next) => {
         }
         output.console = criandoConsole(casosTeste, jsondata.output.retorno);
 
-        fs.unlink(`/tmp/docker/stdout${d}.json`, function () { });
-        fs.unlink(`/tmp/docker/input${d}.c`, function () { });
+        fs.unlink(`/tmp/stdout${d}.json`, function () { });
+        fs.unlink(`/tmp/input${d}.c`, function () { });
         return res.status(200).json({ "output": output });
     });
 });

@@ -5,7 +5,7 @@ docker run -i -t -d --name gccalpine$1 gcc && docker start gccalpine$1
 docker exec -i gccalpine$1 sh -c "echo """" > /home/compiler/output/retorno.txt && echo """" > /home/compiler/output/validacao.txt" 
 
 
-docker cp /tmp/docker/input$1.c gccalpine$1:/home/compiler/input/input.c && 
+docker cp /tmp/input$1.c gccalpine$1:/home/compiler/input/input.c && 
 docker cp timeout_script.sh gccalpine$1:/home/compiler/input/timeout_script.sh && 
 docker cp stdin.txt gccalpine$1:/home/compiler/input/stdin.txt && 
 docker cp createjson_script.sh gccalpine$1:/home/compiler/input/createjson_script.sh
@@ -23,5 +23,5 @@ docker exec -i gccalpine$1 sh -c "./home/compiler/input/createjson_script.sh"
 # para o docker e copia os arquivos de resultados para o servidor que chamou... 
 # $PWD CAMINHO RELATIVO -> /tmp/docker/
 docker stop gccalpine$1  && 
-docker cp gccalpine$1:/home/compiler/output/stdout.txt /tmp/docker/stdout$1.json && 
+docker cp gccalpine$1:/home/compiler/output/stdout.txt /tmp/stdout$1.json && 
 docker rm gccalpine$1
