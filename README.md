@@ -4,7 +4,7 @@ Simples instância de Docker para compilar arquivos C.
 ## Como Instalar ##
 
 * siga estes passos no terminal: 
-    - docker pull ubuntu:14.04
+    - docker pull alpine:3.8
     - docker run -i -t [id_imagem] /bin/bash
     - apt-get update
     - apt-get install -y gcc
