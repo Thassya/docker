@@ -21,7 +21,6 @@
     "body-parser": "*",
     "cors": "*",
     "express": "*",
-    "node-exec-promise": "^1.0.2",
-    "request": "^2.88.0"
+    "promise": "*"
   }
 }
